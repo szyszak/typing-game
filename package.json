@@ -1,0 +1,23 @@
+{
+  "name": "web_dev_boilerplate",
+  "version": "3.0.0",
+  "description": "starter project including gulp, browser-sync, pug, sass, autoprefixer, imagemin, folder structure and some files",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "szyszak",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^2.18.5",
+    "eslint": "^5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.18.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^5.0.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-sass": "^4.0.1",
+    "node-sass": "^4.9.0"
+  },
+  "dependencies": {}
+}
