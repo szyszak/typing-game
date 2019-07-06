@@ -1,7 +1,7 @@
 {
-  "name": "web_dev_boilerplate",
-  "version": "3.0.0",
-  "description": "starter project including gulp, browser-sync, pug, sass, autoprefixer, imagemin, folder structure and some files",
+  "name": "typing_game",
+  "version": "1.0.0",
+  "description": "simple word typing game",
   "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
