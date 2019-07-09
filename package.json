@@ -4,8 +4,9 @@
   "description": "simple word typing game",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "gh-pages -d dist"
   },
+  "homepage": "https://szyszak.github.io/typing-game/",
   "author": "szyszak",
   "license": "MIT",
   "devDependencies": {
@@ -19,5 +20,7 @@
     "gulp-sass": "^4.0.1",
     "node-sass": "^4.9.0"
   },
-  "dependencies": {}
+  "dependencies": {
+    "gh-pages": "^2.0.1"
+  }
 }
