@@ -17,10 +17,30 @@ body {
 }
 
 .game {
+  width: 600px;
+  padding: 80px 30px 30px 30px;
+  position: relative;
+  background-color: #347244;
   color: #f5f5f5;
   font-size: 34px;
   font-weight: bold;
   font-family: sans-serif;
+}
+
+.timer {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+.errors {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+}
+
+.word-view {
+  text-align: center;
 }
 
 .correct {
