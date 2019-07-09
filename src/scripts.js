@@ -1,31 +1,56 @@
 class Game {
   constructor() {
     this.words = [
-      'panda',
+      'movie',
       'clock',
-      'notebook',
-      // 'movie',
-      // 'Blade Runner',
-      // 'The Great Gatsby',
-      // 'giGabYte',
-      // 'WHerEveR',
-      // 'SckOluRtPeFd',
+      'panda',
+      'book',
+      'phone',
+      // 'coffee',
+      // 'duck',
+      // 'glove',
+      // 'music',
+      // 'door',
+      'Blade Runner',
+      'The Great Gatsby',
+      'Washington Monument',
+      'Game Of Thrones',
+      'Deep Purple',
+      // 'Bohemian Rhapsody',
+      // 'Leonardo da Vinci',
+      // 'Metal Gear Solid',
+      // 'Hotel California',
+      // 'The Beatles',
+      'nEVerMiNd',
+      'INconSiSTenT',
+      'whAtEVer',
+      'sTeREotyPe',
+      'exPeRImEnt',
+      // 'aDvenTuRE',
+      // 'GiGAbyTe',
+      // 'AirPlaNe',
+      // 'pacKaGE',
+      // 'wARtHOg',
     ];
+    this.wordIndex = 0;
     this.currentWord = [];
     this.timer = null;
     this.errors = 0;
     this.gameStarted = false;
+
     this.$wordView = document.getElementById('word-view');
     this.$timerView = document.getElementById('timer');
     this.$errorsView = document.getElementById('errors');
 
     this.handleInput = this.handleInput.bind(this);
+  }
 
+  init() {
     window.addEventListener('keypress', this.handleInput);
   }
 
   renderWord(word) {
-    if (!word) {
+    if (this.wordIndex === this.words.length) {
       this.endGame();
       return;
     }
@@ -44,13 +69,15 @@ class Game {
       this.$wordView.appendChild(span);
     }
 
-    this.words.shift();
+    this.wordIndex++;
   }
 
   startGame() {
     this.gameStarted = true;
+    this.$timerView.textContent = '00:00';
+    this.$errorsView.textContent = this.errors;
     this.startTimer();
-    this.renderWord(this.words[0]);
+    this.renderWord(this.words[this.wordIndex]);
   }
 
   startTimer() {
@@ -70,9 +97,12 @@ class Game {
 
   endGame() {
     clearInterval(this.timer);
-    console.log(
-      `Congratulations! You finished this game in ${this.timerStr} with ${this.errors} mistakes`,
-    );
+    this.gameStarted = false;
+    this.wordIndex = 0;
+    this.$wordView.textContent = `Congratulations! You finished this game in ${
+      this.timerStr
+    } with ${this.errors} errors. Press "enter" to try again.`;
+    this.errors = 0;
   }
 
   handleInput(ev) {
@@ -87,7 +117,7 @@ class Game {
         this.currentWord.shift();
 
         if (this.currentWord.length === 0) {
-          this.renderWord(this.words[0]);
+          this.renderWord(this.words[this.wordIndex]);
         }
       } else {
         this.errors++;
@@ -98,3 +128,4 @@ class Game {
 }
 
 const game = new Game();
+game.init();
