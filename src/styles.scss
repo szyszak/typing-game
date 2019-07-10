@@ -46,3 +46,25 @@ body {
 .correct {
   background-color: #1bd04c;
 }
+
+@media (max-width: 600px) {
+  body {
+    background-color: #333333;
+  }
+}
+
+@media (max-width: 460px) {
+  .game {
+    padding: 30px;
+  }
+
+  .timer,
+  .errors {
+    position: static;
+    text-align: center;
+  }
+
+  .word-view {
+    margin-top: 20px;
+  }
+}
